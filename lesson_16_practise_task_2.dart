@@ -5,6 +5,7 @@ void main() {
   a.name = "qashqaibek hatchbekova";
   a.reverse();
   a.upperCase();
+  a.capit();
 }
 
 
@@ -17,10 +18,13 @@ class MyString {
   upperCase() {
     print("${name?[0].toUpperCase()}${name?.substring(1)}");
   }
-  // titleCase() {
-  //   print(name!.to)
-  // }
+  capit() {
+    name = name!.splitMapJoin(RegExp(r'\w+'),onMatch: (m)=> '${m.group(0)}'.substring(0,1).toUpperCase() +'${m.group(0)}'.substring(1).toLowerCase() ,onNonMatch: (n)=> ' ');
+    print(name);
+  }
+ 
 }
+
 
 
 
